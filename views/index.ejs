@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Welcome to <%= title %></h1>
+
+    <div id="page-container">
+        <form action="/upload" method="post" enctype="multipart/form-data" >
+        	<input type="file" name="photo" />
+        	<button>Upload Photo</button>
+        </form>
+
+    	<ul class="photo-list">
+		<% for(var i=0; i<photos.length; i++) { %>
+			<li>
+				<img src="<%= photos[i] %>" />
+			</li>
+		<% } %>
+		</ul>
+    </div>
+  </body>
+</html>
