@@ -1,16 +1,16 @@
 var fs = require('fs'),
-	_ = require('../underscore-min.js');
+	_ = require('underscore');
 
 function getImageFileNames(callback) {
-	fs.readdir(process.cwd() + '/public/uploads', function(err, filesNames){
+	fs.readdir('./public/uploads', function(err, filesNames){
 		
 		var filePaths = _.map(filesNames, function(name){
-			return 'uploads/' + name;
+			return '/uploads/' + name;
 		});
 
 		console.log(filePaths);
 
-		callback(filesNames)
+		callback(filePaths)
 	});
 }
 
