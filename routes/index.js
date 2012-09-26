@@ -20,6 +20,6 @@ function getImageFileNames(callback) {
 
 exports.index = function(req, res){
 	getImageFileNames(function(fileNames){
-		res.render('index', { title: 'Photo-Uploader', photos: fileNames });
+		res.render('index', { title: 'Instagram', photos: fileNames });
 	});
 };
